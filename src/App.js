@@ -14,9 +14,9 @@ const FAQItem = ({ question, answer }) => {
   };
 
   return (
-    <div className="bg-accent-white border border-primary mt-5 p-5 w-[57rem]">
+    <div className="bg-accent-white border border-primary mt-5 p-5 w-full md:w-[57rem] rounded-lg">
       <h1
-        className="text-xl text-primary font-semibold text-left flex items-center justify-between cursor-pointer"
+        className="text-lg md:text-xl text-primary font-semibold text-left flex items-center justify-between cursor-pointer"
         onClick={toggleFAQ}
       >
         {question}
@@ -54,7 +54,7 @@ const FAQItem = ({ question, answer }) => {
           )}
         </span>
       </h1>
-      {isOpen && <p className="text-left text-lg mt-3">{answer}</p>}
+      {isOpen && <p className="text-left text-base md:text-lg mt-3">{answer}</p>}
     </div>
   );
 };
@@ -152,25 +152,29 @@ function App() {
               </div>
 
               {/* FAQ Section */}
-              <div className="text-center">
-                <div className="text-3xl text-primary font-bold">
-                  Frequently asked questions
+              <section id="faq" className="py-16 flex flex-col items-center">
+                <div className="text-center">
+                  <h2 className="text-2xl md:text-3xl text-primary font-bold mb-6">
+                    Frequently asked questions
+                  </h2>
+                  <div className="flex flex-col items-center space-y-6">
+                    {faqs.map((faq, index) => (
+                      <FAQItem
+                        key={index}
+                        question={faq.question}
+                        answer={faq.answer}
+                      />
+                    ))}
+                  </div>
                 </div>
-                {faqs.map((faq, index) => (
-                  <FAQItem
-                    key={index}
-                    question={faq.question}
-                    answer={faq.answer}
-                  />
-                ))}
-              </div>
+              </section>
+
             </div>
           </div>
         </section>
       </main>
 
-      <Footer/>
-
+      <Footer />
     </Router>
   );
 }
