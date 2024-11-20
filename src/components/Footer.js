@@ -1,52 +1,68 @@
-import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import React from "react";
 import logo from "../Images/Logo.png";
-import closeIcon from "../Images/close.png"; 
 
-const Header = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // state for sidebar visibility
-  const location = useLocation();
-
-  // Toggle function for sidebar
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
-
-  // Close the sidebar
-  const closeSidebar = () => {
-    setIsSidebarOpen(false);
-  };
-
+const Footer = () => {
   return (
-    <footer className="bg-purple-700 text-white py-6">
-        <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div>
-                <h4 className="font-semibold">Our Technologies</h4>
-                <ul>
-                <li>ReactJS</li>
-                <li>Gatsby</li>
-                <li>NextJS</li>
-                <li>NodeJS</li>
-                </ul>
-            </div>
-            <div>
-                <h4 className="font-semibold">Our Services</h4>
-                <ul>
-                <li>Social Media Marketing</li>
-                <li>Web & Mobile App Development</li>
-                <li>Data & Analytics</li>
-                </ul>
-            </div>
-            <div>
-                <h4 className="font-semibold">Contact Us</h4>
-                <p>info@atdigital.com</p>
-            </div>
-            </div>
-            <p className="text-center mt-4">&copy; 2024 AT Digital</p>
+    <footer className="bg-primary text-white py-8">
+      <div className="container mx-auto px-4">
+
+        {/* Top Section */}
+        <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-8">
+          {/* Logo and Description */}
+          <div className="flex flex-col items-center md:items-start text-center md:ml-20 md:text-left">
+            <img src={logo} alt="Logo" className="h-8 mb-4" />
+            <p className="text-sm max-w-xs">
+              Your goal is our target. Not anything in-between. We use online
+              marketing platforms and tools to achieve a single objective - your
+              business results.
+            </p>
+          </div>
+
+          {/* Our Technologies */}
+          <div className="text-center md:text-left">
+            <h4 className="font-semibold text-lg mb-3">Our Technologies</h4>
+            <ul className="space-y-2 text-sm">
+              <li>ReactJS</li>
+              <li>Gatsby</li>
+              <li>NextJS</li>
+              <li>NodeJS</li>
+            </ul>
+          </div>
+
+          {/* Our Services */}
+          <div className="text-center md:text-left md:mr-10">
+            <h4 className="font-semibold text-lg mb-3">Our Services</h4>
+            <ul className="space-y-2 text-sm">
+              <li>Social Media Marketing</li>
+              <li>Web & Mobile App Development</li>
+              <li>Data & Analytics</li>
+            </ul>
+          </div>
         </div>
+
+        {/* Divider */}
+        <div className="border-t w-[50rem] mx-auto border-white/20 my-6"></div>
+
+
+        {/* Bottom Section */}
+        <div className="flex flex-col md:flex-row items-center justify-center text-sm">
+            <p className="text-center md:text-left">
+                &copy; 2024 AT Digital
+            </p>
+            <div className="flex space-x-4 mt-4 md:mt-0 justify-center md:justify-start">
+                <a href="#privacy" className="hover:underline">
+                Privacy Policy
+                </a>
+                <span>|</span>
+                <a href="#terms" className="hover:underline">
+                Terms & Conditions
+                </a>
+            </div>
+        </div>
+
+      </div>
     </footer>
   );
 };
 
-export default Header;
+export default Footer;
