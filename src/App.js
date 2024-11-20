@@ -14,7 +14,7 @@ const FAQItem = ({ question, answer }) => {
   };
 
   return (
-    <div className="bg-accent-white border border-primary mt-5 p-5 w-full md:w-[57rem] rounded-lg">
+    <div className="bg-accent-white border border-primary mt-5 p-5 w-full md:w-[57rem] rounded-sm">
       <h1
         className="text-lg md:text-xl text-primary font-semibold text-left flex items-center justify-between cursor-pointer"
         onClick={toggleFAQ}
