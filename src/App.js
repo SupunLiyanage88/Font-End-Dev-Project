@@ -1,5 +1,6 @@
 import { BrowserRouter as Router } from "react-router-dom"; // Use BrowserRouter instead of Router
 import Header from "./components/Header";
+import backgroundImage from "./Images/background.png"; // Import background image
 
 function App() {
   return (
@@ -7,28 +8,35 @@ function App() {
       <Header />
 
       <main>
-        <section
-          className="hero bg-cover bg-center h-screen flex items-center justify-center text-white px-4"
-          style={{
-            backgroundImage: "url('/path-to-your-hero-image.jpg')",
-          }}
-        >
-          <div className="text-center bg-gradient-to-r from-teal-500 to-blue-500 p-10 rounded-lg">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">
-              We Crush Your Competitors, Goals, and Sales Records.
-            </h1>
-            <button className="bg-orange-500 hover:bg-orange-600 text-white py-2 px-6 rounded-full mt-4">
-              Get Free Consultation
-            </button>
-          </div>
-        </section>
+      <section
+        className="hero bg-cover bg-center h-screen flex items-start justify-start text-white px-4"
+        style={{
+          backgroundImage: `url(${backgroundImage})`, // Use imported backgroundImage
+        }}
+      >
+      <div className="text-center w-full md:w-[35rem] bg-gradient-to-r from-teal-500 to-blue-500 p-10 rounded-lg ml-0 mt-[20rem]">
+        <h1 className="text-2xl md:text-4xl font-bold mb-4 text-center md:text-left items-start">
+          We Crush Your <br />
+          Competitors, Goals, And <br />
+          Sales Records - Without <br />
+          The B.S.
+        </h1>
+        <div className="text-left">
+          <button className="bg-orange-500 hover:bg-orange-600 text-white py-2 px-6 rounded-full mt-4 ml-0">
+            Get Free Consultation
+          </button>
+        </div>
+      </div>
+
+      </section>
+
+
 
         {/* Services Section */}
-        <section id="services" className="py-16 bg-gray-100">
+        <section id="services" className="py-16">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-6 text-center">Our Services</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-white p-6 rounded-lg shadow">
+            <div>
+              <div className="bg-white p-6">
                 <h3 className="text-xl font-semibold mb-4">
                   Web & Mobile App Development
                 </h3>
