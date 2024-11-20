@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
 import logo from "../Images/Logo.png";
 import closeIcon from "../Images/close.png"; 
 
 const Header = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false); // state for sidebar visibility
-  const location = useLocation();
 
   // Toggle function for sidebar
   const toggleSidebar = () => {
