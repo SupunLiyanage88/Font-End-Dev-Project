@@ -1,5 +1,8 @@
 import { BrowserRouter as Router } from "react-router-dom"; // Use BrowserRouter instead of Router
 import Header from "./components/Header";
+import backgroundImage from "./Images/background.png"; 
+import image01 from "./Images/image 2.png"; 
+import image02 from "./Images/image 1.png"; 
 
 function App() {
   return (
@@ -7,75 +10,73 @@ function App() {
       <Header />
 
       <main>
+      <div>
         <section
-          className="hero bg-cover bg-center h-screen flex items-center justify-center text-white px-4"
+          className="hero bg-cover bg-center h-screen flex flex-col md:flex-row items-start justify-start text-white px-4"
           style={{
-            backgroundImage: "url('/path-to-your-hero-image.jpg')",
+            backgroundImage: `url(${backgroundImage})`,
           }}
         >
-          <div className="text-center bg-gradient-to-r from-teal-500 to-blue-500 p-10 rounded-lg">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">
-              We Crush Your Competitors, Goals, and Sales Records.
+          <div className="text-center w-full md:w-[35rem] bg-gradient-to-r from-teal-500 to-blue-500 p-10 rounded-lg ml-0 md:ml-20 mt-auto md:mt-[20rem]">
+            <h1 className="text-2xl md:text-4xl font-bold text-left mb-4 md:text-left items-start">
+              We Crush Your <br />
+              Competitors, Goals, And <br />
+              Sales Records - Without <br />
+              The B.S.
             </h1>
-            <button className="bg-orange-500 hover:bg-orange-600 text-white py-2 px-6 rounded-full mt-4">
-              Get Free Consultation
-            </button>
-          </div>
-        </section>
-
-        {/* Services Section */}
-        <section id="services" className="py-16 bg-gray-100">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-6 text-center">Our Services</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-white p-6 rounded-lg shadow">
-                <h3 className="text-xl font-semibold mb-4">
-                  Web & Mobile App Development
-                </h3>
-                <p>
-                  We use frameworks to tailor content and engagement methods for
-                  your business.
-                </p>
-                <button className="text-orange-500 mt-4 hover:underline">
-                  Learn More
-                </button>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow">
-                <h3 className="text-xl font-semibold mb-4">
-                  Digital Strategy Consulting
-                </h3>
-                <p>
-                  Your strategy should complement your overall marketing efforts
-                  for growth.
-                </p>
-                <button className="text-orange-500 mt-4 hover:underline">
-                  Learn More
-                </button>
-              </div>
-              {/* Add more service blocks as needed */}
+            <div className="text-left">
+              <button className="bg-orange-500 hover:bg-orange-600 text-white py-2 px-6 rounded-sm mt-4 ml-0">
+                Get Free Consultation
+              </button>
             </div>
           </div>
         </section>
+      </div>
 
-        {/* FAQ Section */}
-        <section id="faq" className="py-16 bg-white">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-6 text-center">
-              Frequently Asked Questions
-            </h2>
-            <div className="space-y-4">
-              <div className="border p-4 rounded-lg shadow">
-                <h3 className="font-semibold mb-2 cursor-pointer">
-                  What is your main focus?
-                </h3>
-                <p className="text-gray-600">
-                  Our main focus is helping businesses thrive digitally.
-                </p>
+      <section id="services" className="py-16">
+        <div className="container mx-auto px-4">
+          <div>
+            <div className="flex flex-col items-center space-y-8">
+              {/* First Service */}
+              <div className="flex flex-col md:flex-row items-center justify-center space-x-0 md:space-x-6 gap-3">
+                <div className="flex-shrink-0">
+                  <img src={image01} alt="Logo" className="h-[20rem]" />
+                </div>
+                <div className="flex-grow text-center md:text-left">
+                  <h3 className="text-xl font-semibold mb-4 w-full md:w-[35rem]">
+                    Web & Mobile App Development
+                  </h3>
+                  <p className="text-gray-600 mb-4">
+                    We use frameworks to tailor content and engagement methods for your business.
+                  </p>
+                  <button className="text-white bg-secondary mt-4 py-2 px-3 rounded-sm hover:underline">
+                    Learn More
+                  </button>
+                </div>
               </div>
-              {/* Add more FAQ items */}
+
+              {/* Second Service */}
+              <div className="flex flex-col-reverse md:flex-row items-center justify-center space-x-0 md:space-x-6 gap-3">
+                <div className="flex-grow text-center md:text-left">
+                  <h3 className="text-xl font-semibold mb-4">
+                    Digital Strategy Consulting
+                  </h3>
+                  <p className="text-gray-600 mb-4 w-full md:w-[35rem]">
+                    Your digital strategy should complement the overall marketing strategy of the company. In online marketing, each component will never work in isolation, and every business needs a different mix. We provide a clear concept and strategic overview to find the most efficient model for your business.
+                  </p>
+                  <button className="text-white bg-secondary mt-4 py-2 px-3 rounded-sm hover:underline">
+                    Learn More
+                  </button>
+                </div>
+                <div className="flex-shrink-0">
+                  <img src={image02} alt="Logo" className="h-[20rem]" />
+                </div>
+              </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
+
       </main>
 
       {/* Footer Section */}
